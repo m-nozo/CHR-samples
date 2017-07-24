@@ -4,14 +4,20 @@
     <meta charset="utf-8">
     <script src="./CHR.js/dist/chr.min.js"></script>
     <script src="./CHR.js/dist/chrparser.min.js"></script>
+    <script src="./js/main.js"></script>
     <style>
       canvas {
         border: solid 3px #000;
       }
     </style>
   </head>
-  <body>
+  <body onload="main();">
     <h1>CHR sample</h1>
     <canvas id="myCvs" width="610" height="610"></canvas>
+
+<script type="text/plain" id="prog-chr">
+init <=> true
+</script>
+
   </body>
 </html>

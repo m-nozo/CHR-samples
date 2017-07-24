@@ -1,0 +1,3 @@
+[submodule "CHR.js"]
+	path = CHR.js
+	url = https://github.com/fnogatz/CHR.js.git

@@ -16,7 +16,15 @@
     <canvas id="myCvs" width="610" height="610"></canvas>
 
 <script type="text/plain" id="prog-chr">
-init <=> true
+
+init <=> getCvs("myCvs"), drawRedBox("myCvs",10,10,100,200)
+
+getCvs(ID) <=> ${(ID)=>getCvs(ID)}
+cvs(ID,Cvs) ==> ${(Cvs)=>console.log(Cvs)}
+ctx(ID,Ctx) ==> ${(Ctx)=>console.log(Ctx)}
+
+ctx(ID,Ctx) \ drawRedBox(ID,X,Y,W,H) <=> ${(Ctx,X,Y,W,H)=>drawRedBox(Ctx,X,Y,W,H)}
+
 </script>
 
   </body>

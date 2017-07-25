@@ -19,3 +19,12 @@ function drawRedBox(ctx, x, y, w, h) {
     ctx.fillStyle = "rgb(200,0,0)";
     ctx.fillRect(x,y,w,h);
 }
+
+function clearCvs(cvs) {
+    var ctx = cvs.getContext('2d');
+    ctx.clearRect(0,0,cvs.width,cvs.height);
+}
+
+function animate() {
+    requestAnimationFrame(()=>chr.animate());
+}

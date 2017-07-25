@@ -11,7 +11,7 @@ function main() {
 function getCvs(id) {
     var cvs = document.getElementById(id);
     var ctx = cvs.getContext('2d');
-    chr.cvs(id,cvs);
+    chr.cvs(id,cvs,cvs.width,cvs.height);
     chr.ctx(id,ctx);
 }
 

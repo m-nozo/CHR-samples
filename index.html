@@ -16,13 +16,21 @@
     Program:
 <pre>
 <code id="prog-chr">
-init <=> getCvs("myCvs"), drawRedBox("myCvs",10,10,100,200)
+init <=> getCvs("myCvs"), ball(0,0,1,3)
 
-getCvs(ID) <=> ${(ID)=>getCvs(ID)}
-cvs(ID,Cvs) ==> ${(Cvs)=>console.log(Cvs)}
-ctx(ID,Ctx) ==> ${(Ctx)=>console.log(Ctx)}
+// Get canvas
+getCvs(ID) <=> ${()=>getCvs(ID)}
 
+// Draw ball
+ctx(ID,Ctx), ball(X,Y,DX,DY) ==> drawRedBox(ID,X,Y,10,10)
 ctx(ID,Ctx) \ drawRedBox(ID,X,Y,W,H) <=> ${(Ctx,X,Y,W,H)=>drawRedBox(Ctx,X,Y,W,H)}
+
+// Update ball
+cvs("myCvs",Cvs,W,H) \ ball(X,Y,DX,DY) <=> X>=0, X<=W, Y>=0, Y<=H | ball(X+DX,Y+DY,DX,DY)
+cvs("myCvs",Cvs,W,H) \ ball(X,Y,DX,DY) <=> X<0 | ball(0,Y,DX*"-1",DY     )
+//cvs("myCvs",Cvs,W,H) \ ball(X,Y,DX,DY) <=> X>W | ball(W,Y,DX*"-1",DY     )
+cvs("myCvs",Cvs,W,H) \ ball(X,Y,DX,DY) <=> Y<0 | ball(X,0,DX     ,DY*"-1")
+cvs("myCvs",Cvs,W,H) \ ball(X,Y,DX,DY) <=> Y>H | ball(X,H,DX     ,DY*"-1")
 </code>
 </pre>
 

@@ -31,6 +31,13 @@ cvs("myCvs",Cvs,W,H) \ ball(X,Y,DX,DY) <=> X<0 | ball(0,Y,DX*"-1",DY     )
 cvs("myCvs",Cvs,W,H) \ ball(X,Y,DX,DY) <=> X>W | ball(W,Y,DX*"-1",DY     )
 cvs("myCvs",Cvs,W,H) \ ball(X,Y,DX,DY) <=> Y<0 | ball(X,0,DX     ,DY*"-1")
 cvs("myCvs",Cvs,W,H) \ ball(X,Y,DX,DY) <=> Y>H | ball(X,H,DX     ,DY*"-1")
+
+// Event listener
+eventListener(Obj,Type) <=> ${()=>eventListener(Obj,Type)}
+event(Obj,Type,Event) <=> ${()=>console.log(Obj,Type,Event)}
+
+// Add click event listner to cvs
+cvs("myCvs",Cvs,W,H) ==> eventListener(Cvs,"click")
 </code>
 </pre>
 

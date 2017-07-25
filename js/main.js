@@ -28,3 +28,7 @@ function clearCvs(cvs) {
 function animate() {
     requestAnimationFrame(()=>chr.animate());
 }
+
+function eventListener(obj, type) {
+    obj.addEventListener(type, (e)=>chr.event(obj, type, e))
+}

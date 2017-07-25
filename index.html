@@ -7,16 +7,15 @@
     <script src="./js/main.js"></script>
     <style>
       canvas {
-        border: solid 3px #000;
+        border: solid 1px #000;
       }
     </style>
   </head>
   <body onload="main();">
     <h1>CHR sample</h1>
-    <canvas id="myCvs" width="610" height="610"></canvas>
-
-<script type="text/plain" id="prog-chr">
-
+    Program:
+<pre>
+<code id="prog-chr">
 init <=> getCvs("myCvs"), drawRedBox("myCvs",10,10,100,200)
 
 getCvs(ID) <=> ${(ID)=>getCvs(ID)}
@@ -24,8 +23,11 @@ cvs(ID,Cvs) ==> ${(Cvs)=>console.log(Cvs)}
 ctx(ID,Ctx) ==> ${(Ctx)=>console.log(Ctx)}
 
 ctx(ID,Ctx) \ drawRedBox(ID,X,Y,W,H) <=> ${(Ctx,X,Y,W,H)=>drawRedBox(Ctx,X,Y,W,H)}
+</code>
+</pre>
 
-</script>
+    Output:</br>
+    <canvas id="myCvs" width="600" height="300"></canvas>
 
   </body>
 </html>

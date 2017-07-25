@@ -1,7 +1,7 @@
 var chr = CHR();
 
 function main() {
-    chr(document.getElementById('prog-chr').text);
+    chr(document.getElementById('prog-chr').textContent);
     chr.init();
 }
 
